@@ -42,19 +42,20 @@ CLOUDINARY_API_SECRET=your_api_secret <br>
 JWT_SECRET=your_jwt_secret
 
 
-Start the server
-npm start
-Open the app in your browser
-http://localhost:3000
-👨‍💻 Usage
-Register a new user and log in.
+Start the server <br>
+npm start <br>
+Open the app in your browser <br>
+http://localhost:3000 <br>
 
-Upload a file and view/manage it under your account.
-👤 Author:
-Rad
+👨‍💻 Usage <br>
+Register a new user and log in. <br>
+
+Upload a file and view/manage it under your account.<br>
+👤 Author: <br>
+Rad <br>
 GitHub: @chakri-chris
 
-📃 License
+📃 License <br>
 This project is licensed under the MIT License.
 
 
