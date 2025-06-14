@@ -7,16 +7,22 @@ const router = express.Router();
 
 // ------------------- Home Route -------------------
 router.get('/home', authmiddleWare, async (req, res) => {
-    const userfiles = await fileModel.find({ user: req.user.id });
-    res.render('home', {
-        files: userfiles
-    });
+    try {
+        const userfiles = await fileModel.find({ user: req.user.id });
+        res.render('home', {
+            files: userfiles
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Internal Server Error");
+    }
 });
+
 
 // ------------------- Upload Route -------------------
 router.post('/upload', authmiddleWare, uploads.single('file'), async (req, res) => {
     const newFile = await fileModel.create({
-        path: req.file.filename, // ✅ use filename, not full path
+        path: req.file.filename, //  use filename, not full path
         originalname: req.file.originalname,
         user: req.user.id
     });

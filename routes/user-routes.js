@@ -34,7 +34,8 @@ router.post("/register",
 })
 
 router.get('/login' , (req , res)=>{
-    res.render('login');
+    const message = req.query.message
+    res.render('login' , {message});
 })
 router.post('/login' , 
     body('username').trim().isLength({min:5}) ,
@@ -68,10 +69,19 @@ router.post('/login' ,
         username : founduser.username
     } , process.env.JWT_SECRET,  )
 
-    res.cookie( 'token' , token)
-    res.json({message : "login successfull" , token})
+    res.cookie('token', token, {
+    httpOnly: true,
+    maxAge: 24 * 60 * 60 * 1000 // 1 day
+});
+res.redirect('/home');
+
     
 }
 )
+
+router.get('/logout' ,(req , res)=>{
+    res.clearCookie('token');
+    res.redirect('/user/login?message=Logout Successfull');
+})
 
 module.exports = router;

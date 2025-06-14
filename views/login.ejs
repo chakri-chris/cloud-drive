@@ -13,6 +13,12 @@
 
     <form class="w-96"
     action="/user/login" method="post">
+    <% if(message){ %>
+<div class="bg-green-100 text-green-800 p-2 rounded mb-2 text-center">
+    <%= message %>
+    </div>
+    <% } %>
+
         <div>
             <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
             <input type="text" id="first_name"
