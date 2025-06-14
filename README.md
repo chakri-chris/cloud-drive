@@ -35,10 +35,10 @@ Install dependencies
 npm install
 
 Create a .env file in the root directory and add the following:
-MONGODB_URI=your_mongodb_connection_string
-CLOUDINARY_CLOUD_NAME=your_cloudinary_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
+MONGODB_URI=your_mongodb_connection_string <br>
+CLOUDINARY_CLOUD_NAME=your_cloudinary_name <br>
+CLOUDINARY_API_KEY=your_api_key <br>
+CLOUDINARY_API_SECRET=your_api_secret <br>
 JWT_SECRET=your_jwt_secret
 
 
