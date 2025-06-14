@@ -23,7 +23,9 @@ app.set('view engine', 'ejs');
 app.use('/' , indexrouter)
 app.use('/user' , Userrouter)
 
-
+app.get('/', (req, res) => {
+  return res.redirect('/home');
+});
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
